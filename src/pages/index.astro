@@ -1,5 +1,8 @@
 ---
+import Product from "@/components/react/Product.tsx"
+import { getProducts } from "@/utils/fetchData.ts"
 
+const products = await getProducts()
 ---
 
 <html lang="en">
@@ -10,7 +13,8 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="grid min-h-screen max-w-full">
+		<h1 class="text-center text-2xl font-bold">Productos</h1>
+		<Product products={products} />
 	</body>
 </html>
